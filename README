@@ -1,0 +1,86 @@
+OpenNetworks Automation Repo
+
+This repository contains Selenium-based automation scripts for testing OpenNetworks website pages using Python and pytest. It supports multiple browsers (Firefox, Chrome, Edge) and uses a configuration file to select the browser.
+
+---
+
+Prerequisites
+
+Before running the tests, make sure you have the following installed:
+
+1. Python (3.9+ recommended)
+   Download Python: https://www.python.org/downloads/
+
+2. pip (Python package manager)
+   Should come with Python by default.
+
+3. Selenium
+   Install via pip:
+   pip install selenium
+
+4. Webdriver Manager
+   Install via pip:
+   pip install webdriver-manager
+
+5. pytest
+   Install via pip:
+   pip install pytest
+
+---
+
+Repository Setup
+
+1. Clone the repository:
+   git clone https://github.com/<yourusername>/opennetworks.git
+   cd opennetworks
+
+2. Set up .gitignore to exclude sensitive files:
+   utilities/local_paths.py
+   .idea/
+   *.log
+
+3. Create a local_paths.py file from the example:
+   cp utilities/local_paths.py.example utilities/local_paths.py
+
+   Fill in your local paths for browser drivers:
+   CHROMEDRIVER_PATH = "/absolute/path/to/chromedriver"
+   MSEDGEDRIVER_PATH = "/absolute/path/to/msedgedriver"
+   FIREFOXDRIVER_PATH = "/absolute/path/to/geckodriver"
+
+4. Update config.py if needed:
+   BROWSER = "chrome"  # options: "firefox", "chrome", "edge"
+   BASE_URL = "https://opennetworks.org/"
+
+---
+
+Running Tests
+
+Run all tests:
+   pytest
+
+Run a single test file:
+   pytest tests/test_Learn_more.py
+
+Run a single test method:
+   pytest tests/test_Learn_more.py::TestMPLearnMore::test_title_page
+
+---
+
+Notes
+
+- Make sure your browser drivers match your installed browser versions.
+- local_paths.py should never be committed; it contains local absolute paths.
+
+---
+
+Troubleshooting
+
+- If you see WebDriver or browser errors, double-check paths in local_paths.py.
+- Ensure Python, Selenium, and WebDriver Manager are installed correctly.
+- For Git issues, make sure you have a GitHub account and proper remote URL configured.
+
+---
+
+Author
+
+ZM
