@@ -1,0 +1,27 @@
+# --- keep local secrets and machine paths out of git ---
+utilities/local_paths.py
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Pytest cache
+.pytest_cache/
+
+# WebDriverManager cache
+.wdm/
+
+# Virtual envs
+venv/
+.venv/
+
+# IDE junk
+.idea/
+.vscode/
+
+# OS junk
+.DS_Store
+
+# Optional local env files
+.env
